@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="We build great software">
+    <meta name="author" content="Busaga Adrian">
+    <title>Acasa</title>
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Clients Manager</title>
+</head>
+<body>
+<div align="center">
+	<nav>
+        <a href="index">Acasa</a>
+        <a href="despre">Despre</a>
+        <a href="intrebari">Intrebari frecvente</a>
+        <a href="verificare">Verificare</a>
+    </nav>
+    <h1>Create New Client</h1>
+    <br />
+    <form action="#" th:action="@{/save}" th:object="${client}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Client Name:</td>
+                <td><input type="text" th:field="*{nume}" /></td>
+            </tr>
+            <tr>
+                <td>Prenume:</td>
+                <td><input type="text" th:field="*{prenume}" /></td>
+            </tr>
+            <tr>
+                <td>Numar de inmatriculare:</td>
+                <td><input type="text" th:field="*{numarauto}" /></td>
+            </tr>
+            <tr>
+                <td>Valabil pana la:</td>
+                <td><input type="text" th:field="*{termenval}" placeholder="yyyy-mm-dd" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
